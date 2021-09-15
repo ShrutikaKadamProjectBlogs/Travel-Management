@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif; background-image:url("images//kk.jpg");background-size:cover;text-align: auto;width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	padding: 0;}
+
+input[type=text], input[type=E-mail] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: BLUE;
+  color: white;
+  padding: 14px 20px;
+  margin: 2px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+
+
+.container {
+ margin: auto;
+  width: 40%;
+  border: 4px solid white;
+  padding: 10px;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+
+
+  <h1 style="text-align:center">LOGIN FORM</h1>
+
+<form>
+<!--<form action="/action_page.php" method="get"> -->
+  <div class="container">
+ <?php
+// define variables and set to empty values
+$nameErr = $emailErr =  "";
+$name = $email =  "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed";
+    }
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format";
+    }
+  }
+    
+
+
+  if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required";
+  } else {
+    $gender = test_input($_POST["gender"]);
+  }
+}
+
+<!--function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+
+<!--<p><span class="error">* required field</span></p>-->
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
+<span class="error">* <?php echo $nameErr;?></span>
+  
+  <label for="First name"><b>First name</b></label>
+    <input type="text" placeholder="Enter First name" name="First name" required>
+
+  <span class="error">* <?php echo $nameErr;?></span>
+<label for="Last name"><b>Last name</b></label>
+    <input type="text" placeholder="Enter Last name" name="Last name" required>
+    <span class="error">* <?php echo $nameErr;?></span>
+<label for="middle name"><b>middle name</b></label>
+    <input type="text" placeholder="Enter Middle name" name="Middle name" required>
+    <span class="error">* <?php echo $nameErr;?></span> 
+
+            
+ <label for="email"><b>email</b></label>
+  
+<input type="text" placeholder="email"
+       pattern=".+@gmail.com"  required>
+ 
+  <span class="error">* <?php echo $emailErr;?></span>
+  
+
+</form>
+
+
+ <!---   <label for="First name"><b>First name</b></label>
+    <input type="text" placeholder="Enter First name" name="First name" required>
+
+         <label for="Last name"><b>Last name</b></label>
+    <input type="text" placeholder="Enter Last name" name="Last name" required>
+<label for="middle name"><b>middle name</b></label>
+    <input type="text" placeholder="Enter Middle name" name="Middle name" required>
+
+
+    <label for="email"><b>email</b></label>
+  
+<input type="text" placeholder="email"
+       pattern=".+@gmail.com"  required> --->
+<!--<label for="Contact"><b>Contact</b></label>
+    <input type="text" placeholder="contact number"
+       pattern="[0-9]"
+       required>-->
+          
+   <label for="Address"><b>Address</b></label>
+    <input type="text" placeholder="Enter your permant Address" name="Address" required>
+  
+      <label for="Members"><b>Members</b></label>
+    <input type="text" placeholder="count of members"
+       pattern="[0-9]"
+       required>
+     
+<!--<strong>Gender:</strong>
+            <input type="radio" name="gender" >Male
+            <input type="radio" name="gender">Female
+            <input type="radio" name="gender">Other <br><br>
+             -->
+            
+
+<button onclick="myFunction()">login</button>
+
+
+
+
+  
+<script>
+function myFunction() {
+  confirm("YOU ARE SUCESSFULLY REGISTER!");
+}
+
+
+</script>
+
+
+ </form>  
+  </div>
+</div>
+
+ 
+<a href="places.html"><button>CHOOSE YOUR PLACES</button></a>  
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="2.css">
+</head>
+<body>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span> 
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Dashboard</a>
+   <a class="homeblack" href=https://www.google.com/search?q=best+travelling+places+in+world&rlz=1C1CHBF_enIN870IN871&oq=best+&aqs=chrome.1.69i57j69i59.30951j0j7&sourceid=chrome&ie=UTF-8>SEARCH</a>
+  <a href="shortcutlogin.html">Login</a>
+ 
+  <a href="places.html">Services</a>
+ <a href="index.html">Shortcuts</a>
+<a href="home.html">Overview</a>
+<a href="about.html">About</a>
+ <a href="review.html">NEXT PAGE</a> 
+</div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align:center">
+  <h2>YOUR HAPPINESS OUR RESPONSIBILITY</h2>
+  <p>Click on the images below and check your places information:</p>
+
+
+ 
+
+
+  
+  <label for="places">Choose your places</label>
+  <select id="places" name="places">
+  <option value=""></option>
+  <option value="INDIA">INDIA</option>
+    <option value="NEPAL">NEPAL</option>
+    <option value="LONDAN">LONDAN</option>
+    <option value="ITALY">ITALY</option>
+    <option value="CALIFORNIA">CALIFORNIA</option>
+     <option value="AUSTRILISA">AUSTRILISA</option>
+      <option value="NEWZALAND">NEWZALAND</option>
+  </select>
+  
+
+  <input type="button" value="Book" onclick="msg()">
+
+
+<script>
+function msg() {
+  alert("YOUR PLACE IS BOOK THANK YOU FOR BOOKING HAVE A SWEET HOLIDAY !!!!                                                               (Payment Details will be send on your Email ID)");
+}
+</script>
+
+
+
+</div>
+
+
+
+
+
+
+  
+
+
+
+<!-- The four columns -->
+
+
+
+  
+ 
+  <div class="column">
+    <img src="images//img5.jpg" alt="INDIA" style="width:100%" onclick="myFunction(this);">
+    
+    <div class="content">
+    <h2>INDIA</h2>
+    <p>India has 29 states, with major Mughal Empire landmarks and mountain and so on .</p>
+   
+     </div> 
+     </div> 
+ 
+
+
+  </div>
+  
+
+ <div class="column">
+    <img src="IMG//15.jpg" alt="NEPAL" style="width:100%" onclick="myFunction(this);">
+    <div class="content">
+    <h2>NEPAL</h2>
+    <p>Nepal is a beautiful country with stunning landscapes, rich culture and epic trekking trails.</p>
+   
+     </div> 
+  </div>
+
+ 
+ <div class="column">
+    <img src="IMG//13.jpg" alt="LONDAN" style="width:100%" onclick="myFunction(this);">
+  <div class="content">
+    <h2>LONDAN</h2>
+    <p> 40% of the city is green space, making London the greenest city of its size in the world.</p>
+   
+     </div> 
+</div>
+
+ <div class="column">
+    <img src="IMG//11.jpg" alt="ITALY" style="width:100%" onclick="myFunction(this);">
+    <div class="content">
+    <h2>ITALY</h2>
+    <p>Italy, a European country with a long Mediterranean coastline, has left a powerful mark on Western culture and cuisine.</p>
+   
+     </div> 
+  </div>
+
+</div>
+ <div class="column">
+    <img src="IMG//3.jpg" alt="CALIFORNIA" style="width:100%" onclick="myFunction(this);">
+    <div class="content">
+    <h2>CALIFORNIA</h2>
+    <p>California, a western U.S. state, stretches from the Mexican border along the Pacific for nearly 900 miles. </p>
+   
+     </div> 
+  </div>
+
+
+</div>
+ <div class="column">
+    <img src="IMG//14.jpg" alt="AUSTRILISA" style="width:100%" onclick="myFunction(this);">
+    <div class="content">
+    <h2>AUSTRILISA</h2>
+    <p>t is the largest country in Oceania and the world's sixth-largest country by total area.</p>
+   
+     </div> 
+  </div>
+
+
+</div>
+ <div class="column">
+    <img src="IMG//20.jpg" alt="NEWZALAND" style="width:100%" onclick="myFunction(this);">
+    <div class="content">
+    <h2>NEWZALAND</h2>
+    <p>New Zealand is an island country in the southwestern Pacific Ocean.</p>
+   
+     </div> 
+  </div>
+
+</div>
+ <div class="column">
+    <img src="IMG//22.jpg" alt="AFRICA" style="width:100%" onclick="myFunction(this);">
+    <div class="content">
+    <h2>AFRICA</h2>
+    <p>Mountain in South Africa, Mount Ararat in Turkey, Uluru in Australia, Mount Fuji in Japan and Grand Canyon in the United States</p>
+   
+     </div> 
+  </div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
